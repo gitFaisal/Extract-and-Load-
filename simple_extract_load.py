@@ -21,10 +21,10 @@ targetCursor = targetConn.cursor()
 #Query of tables to export 
 
 sourceCursor.execute("""SELECT table_name
-						FROM info_schema
-						WHERE table_name = 'public'
-						AND table_name in ('returns', 'salesperson')
-						GROUP BY 1""")
+			FROM info_schema
+			WHERE table_name = 'public'
+			AND table_name in ('returns', 'salesperson')
+			GROUP BY 1""")
 
 #Create variable to store result of cursor, which we get by fetchall() method
 
