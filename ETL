@@ -35,7 +35,7 @@ sourceTables = sourceCursor.fetchall()
 # Now itterate through sourceTables
 
 for t in  sourceTables:
-	#Drop table if it already exists in our destination, we drop it first.
+# Drop table if it already exists in our destination, we drop it first.
 	targetCursor.execute("drop table if exists %s" % (t[0]))
 	sourceDS = etl.fromdb(sourceConn, "SELECT * FROM %s" % (t[0]))
 	etl.todb = (sourceDS, targetConn, t[0], create=True, sample=1000)
